@@ -3,6 +3,8 @@ package com.example.widgetskotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
@@ -10,6 +12,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
+import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity() {
 // creating objects to interact with the ui
@@ -19,6 +22,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textViewProgress: TextView
     private lateinit var toggleButton: ToggleButton
     private lateinit var toggleView: TextView
+    private lateinit var checkBoxkotlin: CheckBox
+    private lateinit var checkboxJava: CheckBox
+    private lateinit var checkBoxDart: CheckBox
+    private lateinit var checkBoxResult: TextView
+    private lateinit var shoButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -72,6 +80,23 @@ class MainActivity : AppCompatActivity() {
                     toggleView.visibility = View.INVISIBLE
                 }
         }
+
+//        checkbox==============
+        checkBoxkotlin = findViewById(R.id.checkboxKotlin)
+        checkboxJava = findViewById(R.id.checkBoxjava)
+        checkBoxDart = findViewById(R.id.checkBoxDart)
+        checkBoxResult = findViewById(R.id.textView4)
+        shoButton = findViewById(R.id.checkBoxbutton)
+
+        shoButton.setOnClickListener {
+            val sb = StringBuilder()
+            sb.append(checkBoxkotlin.text.toString()+"status is: " + checkBoxkotlin.isChecked + "\n")
+            sb.append(checkboxJava.text.toString()+ "status is: " + checkboxJava.isChecked + "\n")
+            sb.append(checkBoxDart.text.toString()+ "status is: "+ checkBoxDart.isChecked+ "\n")
+
+            checkBoxResult.text = sb.toString()
+        }
+
 
 
 

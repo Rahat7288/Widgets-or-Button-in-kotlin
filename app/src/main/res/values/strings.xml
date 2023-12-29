@@ -6,4 +6,7 @@
     <string name="text_view_questions">Do you like programming?</string>
     <string name="text_view_text">Rate - 0</string>
     <string name="toggle_text">No</string>
+    <string name="checkbox">Kotlin</string>
+    <string name="checkbox1">Java</string>
+    <string name="checkbox2">Dart</string>
 </resources>
