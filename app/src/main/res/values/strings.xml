@@ -5,4 +5,5 @@
     <string name="radio_button_text3">Maybe</string>
     <string name="text_view_questions">Do you like programming?</string>
     <string name="text_view_text">Rate - 0</string>
+    <string name="toggle_text">No</string>
 </resources>

@@ -2,12 +2,14 @@ package com.example.widgetskotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.ToggleButton
 
 class MainActivity : AppCompatActivity() {
 // creating objects to interact with the ui
@@ -15,11 +17,13 @@ class MainActivity : AppCompatActivity() {
     private  lateinit var radioButton: RadioButton
     private lateinit var seekBar: SeekBar
     private lateinit var textViewProgress: TextView
+    private lateinit var toggleButton: ToggleButton
+    private lateinit var toggleView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//finding views by id
+//finding views by id radio buttons =======================================
         radioGroup = findViewById(R.id.radioGroup)
         radioGroup.setOnCheckedChangeListener { radioGroup, id ->
             radioButton = findViewById(id)
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-//
+//seek bar======================
         seekBar = findViewById(R.id.seekBar)
         textViewProgress = findViewById(R.id.texts)
 
@@ -55,6 +59,22 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+//        toggle buttons ======================
+
+        toggleButton = findViewById(R.id.toggleButton)
+        toggleView = findViewById(R.id.textView3)
+        
+        toggleButton.setOnCheckedChangeListener { compoundButton, isChecked ->
+                if (isChecked){
+                    toggleView.visibility = View.VISIBLE
+                }else{
+                    toggleView.visibility = View.INVISIBLE
+                }
+        }
+
+
+
 
 
     }
